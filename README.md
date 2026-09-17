@@ -31,11 +31,11 @@ Server lokal tersedia di `http://localhost:8788`. Hasil build ada di `dist/` dan
 3. Atur **Build command** menjadi `npm run build`.
 4. Atur **Build output directory** menjadi `dist`.
 5. Deploy. Cloudflare Pages akan menyajikan file statis beserta `_headers`, `robots.txt`, dan `sitemap.xml`.
-6. Setelah domain final tersedia, perbarui setiap `rel="canonical"`, URL Open Graph, `sitemap.xml`, dan properti URL pada structured data menjadi URL domain produksi yang absolut. Domain tidak diisi sekarang agar tidak mengarang domain perusahaan.
+6. Setelah domain final tersedia, isi `siteUrl` pada `site.config.json` atau set environment variable `SITE_URL` saat build, misalnya `SITE_URL=https://domain-anda.tld npm run build`. Build akan menghasilkan canonical URL absolut, `og:url`, URL structured data, sitemap absolut, dan referensi sitemap di `robots.txt`. Domain tidak diisi sekarang agar tidak mengarang domain perusahaan.
 
 ## Aset yang masih diperlukan
 
-- Logo asli Sinar Jaya SAE, ditempatkan di `public/assets/logo/`.
+- Logo asli Sinar Jaya SAE, ditempatkan sebagai `public/assets/logo/logo-sinar-jaya-sae.svg` (atau format final yang disetujui), kemudian tautkan pada komponen header/footer di `scripts/generate-pages.mjs`.
 - Foto kemasan asli untuk kelima produk, ditempatkan di `public/assets/products/`.
 - Domain final untuk canonical URL, sitemap absolut, dan metadata sosial produksi.
 - Detail produk yang sudah disetujui (spesifikasi, cara aplikasi, dan materi pendukung) bila ingin ditampilkan.
