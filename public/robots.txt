@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Set SITE_URL or siteUrl in site.config.json to publish the production sitemap URL.
