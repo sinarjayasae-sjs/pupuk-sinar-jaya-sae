@@ -1,0 +1,10 @@
+{
+  "name": "sinar-jaya-sae-corporate",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "python3 -m http.server 8788 -d public",
+    "lint": "node scripts/lint.mjs"
+  }
+}

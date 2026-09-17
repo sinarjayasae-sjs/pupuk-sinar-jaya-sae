@@ -1,3 +1,43 @@
-# Sinar Jaya SAE
+# Sinar Jaya SAE — Corporate Website
 
-Website Corporate Sinar Jaya SAE.
+Website statis corporate untuk **Sinar Jaya SAE**, industri pupuk fosfat alam dan mineral pertanian dari Gresik, Jawa Timur.
+
+## Struktur halaman
+
+- `/` — Beranda
+- `/tentang-kami/` — Profil, visi, dan misi
+- `/produk/` — Portofolio produk
+- `/produk/sjs-multy-blanding/`
+- `/produk/sp-36/`
+- `/produk/sjs-agrophos/`
+- `/produk/sawit-mas-13-6-27-te/`
+- `/produk/golden-premium/`
+- `/solusi/`, `/distribusi/`, `/artikel/`, dan `/kontak/`
+
+## Pengembangan lokal
+
+```bash
+npm run lint
+npm run build
+npm start
+```
+
+Server lokal tersedia di `http://localhost:8788`. Hasil build ada di `dist/` dan tidak dilacak Git.
+
+## Deploy ke Cloudflare Pages
+
+1. Buat project baru di **Cloudflare Pages** dan hubungkan ke repository ini (bukan repository lama `Pupuksjs`).
+2. Pilih branch produksi yang diinginkan. Saat ini perubahan dikerjakan pada branch aktif repository.
+3. Atur **Build command** menjadi `npm run build`.
+4. Atur **Build output directory** menjadi `dist`.
+5. Deploy. Cloudflare Pages akan menyajikan file statis beserta `_headers`, `robots.txt`, dan `sitemap.xml`.
+6. Setelah domain final tersedia, perbarui setiap `rel="canonical"`, URL Open Graph, `sitemap.xml`, dan properti URL pada structured data menjadi URL domain produksi yang absolut. Domain tidak diisi sekarang agar tidak mengarang domain perusahaan.
+
+## Aset yang masih diperlukan
+
+- Logo asli Sinar Jaya SAE, ditempatkan di `public/assets/logo/`.
+- Foto kemasan asli untuk kelima produk, ditempatkan di `public/assets/products/`.
+- Domain final untuk canonical URL, sitemap absolut, dan metadata sosial produksi.
+- Detail produk yang sudah disetujui (spesifikasi, cara aplikasi, dan materi pendukung) bila ingin ditampilkan.
+
+Jangan gunakan ilustrasi atau placeholder pada proyek ini sebagai pengganti logo maupun foto kemasan asli.
